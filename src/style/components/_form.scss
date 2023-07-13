@@ -1,0 +1,20 @@
+@use "../variables" as v;
+@use "./label" as l;
+@use "./input.scss" as i;
+@use "./error" as e;
+@use "./button" as b;
+@use "./forgot" as f;
+
+form {
+    fieldset {
+        border: none;
+        display: flex;
+        flex-direction: column;
+        padding: 0.1rem;
+        @include l.label();
+        @include i.input();
+        @include e.error();
+    }
+    @include b.button();
+    @include f.forgot();
+}

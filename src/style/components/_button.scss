@@ -1,0 +1,22 @@
+@use "../variables" as v;
+@mixin button() {
+    button {
+      background: transparent;
+      color: v.$white;
+      background-image: v.$main-bg;
+      font-family: v.$font-family;
+      font-size: 1rem;
+      text-transform: uppercase;
+      padding: 1.2rem 1rem;
+      border: solid white;
+      border-radius: 8rem;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 1rem;
+
+      &:disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
+        }
+      }
+    }

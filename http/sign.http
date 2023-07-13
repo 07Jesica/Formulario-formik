@@ -1,0 +1,10 @@
+### obtener
+GET  http://localhost:3000/Datos
+
+### Modificar tarea
+PATCH http://localhost:3000/Datos/2
+content-type: application/json
+{
+    "email": "carolina.cortes0206@gmail.com",
+    "password": "133678"
+}
