@@ -2,6 +2,7 @@ import SignContext from "../context/ContextSign";
 import { useContext, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { QuestionSchema } from "../schemas/QuestionSchema";
+import { Boton } from "../stories/Boton/Boton";
 
 const initialValues = {
     framework:"",
@@ -57,7 +58,11 @@ return (
                 className="error-message"
                 
               />
-                 <button type="submit" disabled={!dirty}  onClick={() => resetForm()}>Save</button>  
+               <Boton label="Save"
+                primary={true} 
+                size="large"
+                disabled={!dirty}  onClick={() => resetForm()}> Save
+                </Boton>
            </Form>
            );
    }}
@@ -73,7 +78,13 @@ return (
           setStep("SignIn");
        }} >Sign In!</span></p>
        
-      <button className="btn" type="button"onClick={()=>setFormValues(savedValues)}>saved data</button>
+       <Boton 
+        label="Saved Data"
+        Secondary ={true} 
+        size="small"
+        onClick={()=>setFormValues(savedValues)}
+        >saved data</Boton>
+   
       
   </main>
   );

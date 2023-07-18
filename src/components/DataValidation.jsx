@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import SignContext from "../context/ContextSign";
 import { Formik,Form, Field, ErrorMessage } from "formik";
 import { DataValidationSchema } from "../schemas/DataValidationSchema";
+import { Boton } from "../stories/Boton/Boton";
 
 const initialValues = {
   country: "",
@@ -68,9 +69,14 @@ const DataValidation = () => {
               />
     </fieldset>
 <fieldset>
-  <button type="button"  onClick={() => {
-      setStep("Question");
-   }}>next👉</button>
+  <Boton
+   label="Login"
+   primary={true} 
+   size="large" 
+   onClick={() => {
+    setStep("Question");
+ }}>next👉</Boton>
+ 
 </fieldset>
     </Form>
     </Formik>
@@ -79,7 +85,12 @@ const DataValidation = () => {
      onClick={() => {
       setStep("Create");
    }}>👈 previous </span></p>
-   <button className="btn" type="button"onClick={()=>setFormValues(savedValues)}>load saved data </button>
+   <Boton
+    label="Saved Data"
+    Secondary ={true} 
+    size="small"
+    onClick={()=>setFormValues(savedValues)}
+   >load saved data </Boton>
   </main>
   );
 }

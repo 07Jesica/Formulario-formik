@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import SignContext from "../context/ContextSign";
 import { Formik, Form, Field,  ErrorMessage } from "formik";
 import { SignInSchema } from "../schemas/SignInSchema";
+import { Boton } from "../stories/Boton/Boton";
 
 const initialValues = {
   email:"",
@@ -49,9 +50,14 @@ const { setStep } = useContext(SignContext);
               />
             
         </fieldset>
-        <button 
-        type="submit" disabled={!dirty}
-        onClick={() => resetForm()} >Login</button>
+        <Boton 
+         label="Login"
+         primary={true} 
+         size="large"
+         disabled={!dirty}
+        onClick={() => resetForm()}
+        > Login
+        </Boton>
  
         <div className="forgot" onClick={() => {
                     setStep("Forgot");

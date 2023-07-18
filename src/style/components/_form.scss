@@ -2,7 +2,7 @@
 @use "./label" as l;
 @use "./input.scss" as i;
 @use "./error" as e;
-@use "./button" as b;
+//@use "./button" as b;
 @use "./forgot" as f;
 
 form {
@@ -15,6 +15,6 @@ form {
         @include i.input();
         @include e.error();
     }
-    @include b.button();
+   // @include b.button();
     @include f.forgot();
 }

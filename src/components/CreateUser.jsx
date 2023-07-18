@@ -3,6 +3,7 @@ import { useState } from "react";
 import SignContext from "../context/ContextSign";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { CreateUserSchema } from "../schemas/CreateUserSchema";
+import { Boton } from "../stories/Boton/Boton";
 
 
  const initialValues={
@@ -79,14 +80,25 @@ const CreateUser = () => {
               />
         </fieldset>
         <fieldset>
-        <button type="button" onClick={() => {
-      setStep("Data");
-   }} >Next👉</button>
+          <Boton
+          label="Login"
+          primary={true} 
+          size="large"
+          onClick={() => {
+            setStep("Data");
+         }} 
+           >Next👉</Boton>
+      
         </fieldset>
     </Form>
    </Formik>
   </div>
-   <button className="btn" type="button"onClick={()=>setFormValues(savedValues)}>load saved data </button>
+  <Boton 
+   label="Saved Data"
+   Secondary ={true} 
+   size="small"
+   onClick={()=>setFormValues(savedValues)}
+  >load saved data</Boton>
    
     </main>
   );

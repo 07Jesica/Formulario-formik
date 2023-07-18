@@ -2,6 +2,7 @@ import SignContext from "../context/ContextSign";
 import { useContext } from "react";
 import { useFormik } from "formik";
 import { ForgotPasswordSchema } from "../schemas/ForgotPasswordSchema";
+import { Boton } from "../stories/Boton/Boton";
 
 const onSubmit = async (values, actions) => {
   console.log(values);
@@ -46,7 +47,12 @@ const ForgotPassword = () => {
                     />
              {errors.email && <p className="error-message">{errors.email}</p>}
             </fieldset>
-            <button disabled={isSubmitting} type="submit"> Remember me!</button>
+            <Boton
+             label="Login"
+             primary={true} 
+             size="large"
+             disabled={isSubmitting}
+            >Remember me!</Boton>
         </form>
         </div>
         <p>already have an account?<span
