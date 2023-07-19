@@ -9,12 +9,16 @@ const initialValues = {
   country: "",
   city: "",
   NumberPhone:"",
+  framework:"",
+  terms: false,
 }
 
 const savedValues = {
   country: "Colombia",
   city: "Bogota",
   NumberPhone:"3133456789",
+  framework:"Angular",
+  terms: true,
 }
 
 const DataValidation = () => {
@@ -75,6 +79,32 @@ const DataValidation = () => {
                 className="error-message"
               />
     </fieldset>
+    <fieldset>
+            <label htmlFor="framework">Favorite framework</label>
+            <Field id="framework" name="framework" as="select" >
+                        <option value="">select your framework</option>
+                        <option value="React">React</option>
+                        <option value="Vue">Vue</option>
+                        <option value="Angular">Angular</option>
+            </Field>
+          
+            <ErrorMessage
+                name="framework"
+                component="p"
+                className="error-message"
+              />
+            </fieldset>
+            <fieldset>
+            <label htmlFor="terms">
+              <Field id="terms" name="terms" type="checkbox"/> Accept terms and conditions
+            </label>
+              </fieldset>
+              <ErrorMessage
+                name="terms"
+                component="p"
+                className="error-message"
+                
+              />
 <fieldset>
   <Boton
    label="Login"

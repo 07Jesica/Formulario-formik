@@ -78,6 +78,11 @@ const { setStep } = useContext(SignContext);
         setStep("Create");
      }} >CreateUser</span>
     </p>
+    <p>
+     <span onClick={() => {
+        setStep("Question");
+     }} >Home</span>
+    </p>
  </main>
   );
 };
