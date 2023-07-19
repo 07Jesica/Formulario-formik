@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import SignContext from "../context/ContextSign";
 import { Formik, Form, Field,  ErrorMessage } from "formik";
 import { SignInSchema } from "../schemas/SignInSchema";
@@ -26,6 +26,7 @@ const { setStep } = useContext(SignContext);
   <Formik 
   initialValues={initialValues}
   validationSchema={SignInSchema}
+  
   >
     {({dirty, resetForm}) => {
        return (

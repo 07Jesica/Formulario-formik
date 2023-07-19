@@ -2,31 +2,35 @@ import SignContext from "../context/ContextSign";
 import { useContext } from "react";
 import { useFormik } from "formik";
 import { ForgotPasswordSchema } from "../schemas/ForgotPasswordSchema";
-import { Boton } from "../stories/Boton/Boton";
 import Titulo from "../stories/Titulo/Titulo";
+import { useLocalStorage } from "../Hook/useLocalstorage";
 
-const onSubmit = async (values, actions) => {
-  console.log(values);
-  console.log(actions);
-
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-  
-
-  alert(`Se ha enviado su password a la cuenta ${values.email}!` );
-
-  // Limpia al formulario
-  actions.resetForm();
-};
   
 
 const ForgotPassword = () => {
   const { setStep } = useContext(SignContext);
-  const {values, handleChange, errors,  handleBlur, handleSubmit, isSubmitting } = useFormik({
+  const [ text, setText ] = useLocalStorage('text', '');
+
+  const onSubmit = async (values, actions) => {
+    console.log(values);
+    console.log(actions);
+
+    // Simula el envío de datos al backend
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    // Tiene acceso a los datos del formulario
+    alert(`Se ha enviado su password a la cuenta!`);
+
+    //Limpia al formulario
+    actions.resetForm();
+  };
+
+  const { values, handleChange, errors,  handleBlur, handleSubmit, isSubmitting } = useFormik({
     initialValues:{
       email: "",
     },
     validationSchema: ForgotPasswordSchema,
-    onSubmit
+    onSubmit,
   });
   console.log(isSubmitting);
 
@@ -38,13 +42,15 @@ const ForgotPassword = () => {
       backgroundColor="blueviolet"
       textColor="white"></Titulo>
         <div className="card">
-        <form onSubmit={handleSubmit} autoComplete="off">
+        <form 
+          onChange={e => setText(e.target.value)}
+        onSubmit={handleSubmit} autoComplete="off">
             <fieldset>
                 <label htmlFor="email">Email</label>
                 <input
                  type="email"
                   id="email"
-                   value={values.email}
+                  value={text}
                    onChange={handleChange}
                    onBlur={handleBlur}
                     autoFocus 
@@ -52,12 +58,10 @@ const ForgotPassword = () => {
                     />
              {errors.email && <p className="error-message">{errors.email}</p>}
             </fieldset>
-            <Boton
-             label="Login"
-             primary={true} 
-             size="large"
-             disabled={isSubmitting}
-            >Remember me!</Boton>
+            <button className="boton" disabled={isSubmitting} type="submit">
+            Remember me!
+          </button>
+
         </form>
         </div>
         <p>already have an account?<span

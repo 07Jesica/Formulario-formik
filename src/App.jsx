@@ -7,14 +7,12 @@ import { useState } from "react";
 import  SignContext from "./context/ContextSign";
 
 
-
 function App() {
-const [step, setStep] = useState("Question");
-
-
+const [step, setStep] = useState("Forgot");
 
 return (
   <>
+   
     <SignContext.Provider value={ { step, setStep }}>
     <div className="container">
     {step === "SignIn" && <SignIn />}
@@ -24,6 +22,7 @@ return (
     {step ==="Question" && <Questions /> }
       </div>
     </SignContext.Provider>
+ 
     </>
   );
 }

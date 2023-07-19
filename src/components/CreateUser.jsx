@@ -25,10 +25,7 @@ const CreateUser = () => {
   const { setStep } = useContext(SignContext);
   const [formValues, setFormValues] = useState(null);
 
- 
- 
-
-  return (
+ return (
     <main>
       <Titulo
       texto="Welcome, Join us!"
@@ -44,9 +41,7 @@ const CreateUser = () => {
        enableReinitialize
       
       >
-   
-      
-    <Form  autoComplete="off">
+   <Form  autoComplete="off">
     <fieldset>
               <label htmlFor="fullName">Full name</label>
               <Field id="fullName" name="fullName" type="text"
