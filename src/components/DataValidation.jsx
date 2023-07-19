@@ -3,6 +3,7 @@ import SignContext from "../context/ContextSign";
 import { Formik,Form, Field, ErrorMessage } from "formik";
 import { DataValidationSchema } from "../schemas/DataValidationSchema";
 import { Boton } from "../stories/Boton/Boton";
+import Titulo from "../stories/Titulo/Titulo";
 
 const initialValues = {
   country: "",
@@ -22,7 +23,13 @@ const DataValidation = () => {
   
   return (
   <main>
-    <h3>Validation Data!</h3>
+    <Titulo
+     texto="Data Validation..."
+     nivel={1}
+     backgroundColor="blueviolet"
+     textColor="white"
+     ></Titulo>
+   
     <div className="card">
     <Formik 
      initialValues={formValues || initialValues}

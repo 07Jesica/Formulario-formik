@@ -8,6 +8,7 @@ export const Boton = ({ label, primary, size, onClick }) => {
          type="button"
          className={`btn ${tipo} btn-${size}`} 
          onClick={onClick}
+        
          >
         {label}
       </button>
@@ -19,6 +20,7 @@ export const Boton = ({ label, primary, size, onClick }) => {
     primary: PropTypes.bool,
     size: PropTypes.oneOf(["small", "medium", "large"]),
     onClick: PropTypes.func,
+   
   };
   
   Boton.defaultProps = {
@@ -26,4 +28,5 @@ export const Boton = ({ label, primary, size, onClick }) => {
     primary: true,
     size: "medium",
     onClick: undefined,
+    
   };

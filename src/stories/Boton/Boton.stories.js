@@ -1,11 +1,13 @@
 import { Boton } from "./Boton";
 
+
 export default {
   component: Boton,
 };
 
 
 // Stories
+
 export const Primary = {
     args: {
       label: "Básico",

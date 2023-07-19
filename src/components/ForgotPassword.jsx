@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { useFormik } from "formik";
 import { ForgotPasswordSchema } from "../schemas/ForgotPasswordSchema";
 import { Boton } from "../stories/Boton/Boton";
+import Titulo from "../stories/Titulo/Titulo";
 
 const onSubmit = async (values, actions) => {
   console.log(values);
@@ -31,7 +32,11 @@ const ForgotPassword = () => {
 
   return (
     <main>
-        <h3>Forgot Password</h3>
+      <Titulo
+      texto="Forgot Password"
+      nivel={1}
+      backgroundColor="blueviolet"
+      textColor="white"></Titulo>
         <div className="card">
         <form onSubmit={handleSubmit} autoComplete="off">
             <fieldset>

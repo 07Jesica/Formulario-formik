@@ -3,6 +3,7 @@ import SignContext from "../context/ContextSign";
 import { Formik, Form, Field,  ErrorMessage } from "formik";
 import { SignInSchema } from "../schemas/SignInSchema";
 import { Boton } from "../stories/Boton/Boton";
+import Titulo from "../stories/Titulo/Titulo";
 
 const initialValues = {
   email:"",
@@ -14,7 +15,12 @@ const { setStep } = useContext(SignContext);
 
  return (
  <main>
-  <h3>Welcome!!</h3>
+  <Titulo
+    texto="Welcome!"
+    nivel={1}
+    backgroundColor="blueviolet"
+    textColor="white"
+  ></Titulo>
   <div className="card">
    
   <Formik 

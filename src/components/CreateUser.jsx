@@ -4,6 +4,7 @@ import SignContext from "../context/ContextSign";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { CreateUserSchema } from "../schemas/CreateUserSchema";
 import { Boton } from "../stories/Boton/Boton";
+import Titulo from "../stories/Titulo/Titulo";
 
 
  const initialValues={
@@ -29,7 +30,13 @@ const CreateUser = () => {
 
   return (
     <main>
-    <h3>Welcome, Join us!</h3>
+      <Titulo
+      texto="Welcome, Join us!"
+      nivel={3}
+      backgroundColor="blueviolet"
+      textColor="white"
+      ></Titulo>
+    
     <div className="card">
       <Formik 
        initialValues={formValues || initialValues}

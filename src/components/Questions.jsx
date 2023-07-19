@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { QuestionSchema } from "../schemas/QuestionSchema";
 import { Boton } from "../stories/Boton/Boton";
+import Titulo from "../stories/Titulo/Titulo";
 
 const initialValues = {
     framework:"",
@@ -20,7 +21,12 @@ const initialValues = {
 
 return (
   <main>
-    <h3>Favorite framework</h3>
+    <Titulo
+      texto="Favorite framework..."
+      nivel={1}
+      backgroundColor="blueviolet"
+      textColor="white"
+    ></Titulo>
     <div className="card">
       <Formik 
       initialValues={formValues || initialValues}
